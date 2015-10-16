@@ -6,14 +6,19 @@ class PostsController < ApplicationController
 
   def show 
   	@post = Post.find(params[:id])
+  	@tags = Tag.all
   end
 
   def new
   	@post = Post.new
+  	@tags = Tag.all
   end
 
   def create
+  	tag_id = params[:post][:tags]
+  	tag = Tag.find(tag_id)
   	@post = Post.new(post_params)
+  	@post.tags.push(tag)
   	if @post.save
   	  redirect_to posts_path
   	else

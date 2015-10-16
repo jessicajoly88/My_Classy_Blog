@@ -12,6 +12,9 @@
     <%= f.text_area :body, cols: "80", rows: "10"%>
   </div>
   <div class="form-group">
+  <%= f.select :tags, @tags.map { |tag| [ tag.name, tag.id]} %> 
+  </div>
+  <div class="form-group">
     <%= f.label :image%>
     <%= f.text_field :image%>
   </div>

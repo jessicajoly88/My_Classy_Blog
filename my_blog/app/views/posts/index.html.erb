@@ -17,13 +17,17 @@
 <ul>
   <% @tags.each do |tag| %>
   <br>
-    <li><%= tag.name %></li>
+    <li> <%= link_to tag.name,  tag_posts_path(tag) %>
+     <%=link_to "Edit", edit_tag_path(tag), class:"btn btn-default" %>
+     <%=link_to "Delete", tag_path(tag), 
+                          :data => {:confirm =>"You sure?",
+                          :method => "delete"}, class:"btn btn-default" %>
+    </li>
+
   <% end %>
   <br>
   <%=link_to "Add Tag", new_tag_path, class:"btn btn-default" %>
 </ul>
 </div>
-
-
 
 
