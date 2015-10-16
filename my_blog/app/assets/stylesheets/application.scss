@@ -1,0 +1,35 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.main-jumbotron {
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  margin:-20px;
+  padding: 0px;
+  height: 300px;
+}
+
+.navbar {
+   border: none;
+}
+
+.navbar-link {
+  color: black !important;
+  font-size: 1.0em;
+}
+
+.post-header {
+  margin-top:4rem;
+  font-size: 3em;
+  color:black;
+  font-weight: 400;
+  text-align:center;
+}
+
+
+li {
+  list-style-type: none;
+}
+
