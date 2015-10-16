@@ -1,4 +1,4 @@
-<h1> Posts </h1>
+<div class = "container">
 <ul>
  <% @posts.each do |post| %>
    <li>
@@ -6,13 +6,24 @@
     <%= link_to post.title, post_path(post) %>
     <small> <%=post.rating %> Likes </small>
     <small>Posted: <%= ((Time.now - post.created_at)/60).round(0)%> minutes ago</small>
-   <br>
+    <br>
    </li>
  <% end %> 
-<ul>
-
-<hr>
-
+<br>
 <%=link_to "New Post", new_post_path, class:"btn btn-default" %>
+<br>
+<hr>
+<h3> Tags </h3>
+<ul>
+  <% @tags.each do |tag| %>
+  <br>
+    <li><%= tag.name %></li>
+  <% end %>
+  <br>
+  <%=link_to "Add Tag", new_tag_path, class:"btn btn-default" %>
+</ul>
+</div>
+
+
 
 
