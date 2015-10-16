@@ -16,5 +16,27 @@ describe 'the add a post process' do
     expect(page).to have_content 'errors'
   end
 
+describe "the edit a post process" do
+  it "edits a post" do
+    post = Post.create(:title=> "This Sucks", :body=> "Hot and Steamy")
+    visit post_path(post)
+    click_on 'Edit'
+    fill_in 'Title', :with => 'Hawt'
+    click_on 'Update Post'
+    expect(page).to have_content 'Hawt'
+  end
+
+  it "gives error when no title or body is entered" do
+    post= Post.create(:body => "Hot and Steamy", :title => "Betrayal")
+    visit post_path(post)
+    click_on 'Edit'
+    fill_in 'Title', :with => ''
+    click_on 'Update Post'
+    expect(page).to have_content 'errors'
+  end
+end
+
+
+
 	
 end
