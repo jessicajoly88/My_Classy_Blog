@@ -36,6 +36,14 @@ describe "the edit a post process" do
   end
 end
 
+describe "the delete a post process" do
+  it "deletes a post" do
+    post= Post.create(:body => "Hot and Steamy", :title => "Betrayal")
+    visit post_path(post)
+    click_on 'Delete'
+    expect(page).to_not have_content 'Betrayal'
+  end
+end
 
 
 	
