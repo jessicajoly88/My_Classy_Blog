@@ -1,8 +1,12 @@
-<h1><%= @tag.name %><h1>
-<br>
-<li>Posts associated with tag:</li>
-<ul class= "list-group">
+<center>
+<h1><%= @tag.name %></h1>
+</center>
+<li>Tagged Posts:</li>
+<hr>
+<div class = "container">
+  <ul>
   <% @tag.posts.order(created_at: :desc).each do |post| %>
-    <li><%= post.title %> </li>
+    <%= link_to post.title, post_path(post) %>
   <% end %>
-</ul>
+  </ul>
+</div>
