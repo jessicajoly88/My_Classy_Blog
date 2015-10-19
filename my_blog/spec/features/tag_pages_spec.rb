@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'the add a tag process' do 
-  it 'adds a new tag' do
+  it 'adds a new tag to index page' do
   	visit posts_path
   	click_on "Add Tag"
   	fill_in 'Name', :with => 'Ruby'
@@ -14,4 +14,5 @@ describe 'the add a tag process' do
     click_on 'Create Tag'
     expect(page).to have_content 'errors'
   end
+
 end

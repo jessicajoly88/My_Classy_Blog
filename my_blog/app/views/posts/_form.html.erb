@@ -11,13 +11,15 @@
     <br>
     <%= f.text_area :body, cols: "80", rows: "10"%>
   </div>
-  <div class="form-group">
-  <%= f.select :tags, @tags.map { |tag| [ tag.name, tag.id]} %> 
+  <% @tags.each do |tag| %>
+    <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
+    <%= label_tag :tags, tag.name %>
+  <% end %>
   </div>
   <div class="form-group">
     <%= f.label :image%>
     <%= f.text_field :image%>
   </div>
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-default center-block" %>
   <% end %>
 </center>

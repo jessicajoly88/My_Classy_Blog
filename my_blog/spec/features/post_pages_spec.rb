@@ -45,6 +45,5 @@ describe "the delete a post process" do
   end
 end
 
-
 	
 end

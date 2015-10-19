@@ -15,19 +15,26 @@ class PostsController < ApplicationController
   end
 
   def create
-  	tag_id = params[:post][:tags]
-  	tag = Tag.find(tag_id)
-  	@post = Post.new(post_params)
-  	@post.tags.push(tag)
+    @post = Post.new(post_params)
+    tag_ids = params[:post][:tag]
   	if @post.save
-  	  redirect_to posts_path
-  	else
-  	  render :new	
-  	end
-  end
+      if tag_ids != nil
+        if tag_ids.length > 0
+          tag_ids.each do |tag_id|
+            tag = Tag.find(tag_id)
+            @post.tags.push(tag)
+          end 
+        end
+      end
+      redirect_to posts_path
+    else
+      render :new  
+    end
+  end 
 
   def edit
   	@post = Post.find(params[:id])
+
   end
 
   def update

@@ -6,7 +6,7 @@
 
 ## Description
 
-_A classy blog documenting my journey as a lady coder in the Pacific Northwest._
+_A classy blog built with Ruby on Rails that documents my journey as a lady coder in the Pacific Northwest._
 
 _Version 1.0 has the basic blog functionalities that include adding, editing and destroying posts. Additionality, it also allows for subject tags to be created/edited/deleted and associated to posts._
 
@@ -22,9 +22,9 @@ _Future Updates:._
 * To bundle the gems, type bundle into the terminal
 * To launch Postgres, type postgres into the terminal
 * To create the database, type rake db:create into the terminal 
-* To create the tables in the database, type rake db:migrate into the termainal
+* To create the tables in the database, type rake db:migrate into the terminal
 * To create the test database, type rake:db:test:prepare into the terminal
-* Launch server by typing rails s into the terminal ans going to localhost:3000 in your browser
+* Launch server by typing rails s into the terminal and going to localhost:3000 in your browser
 
 ### Technologies Used
 
