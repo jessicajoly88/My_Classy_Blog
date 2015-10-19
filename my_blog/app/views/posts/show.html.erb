@@ -16,9 +16,9 @@
   </p></li>
   </center>
   <br>
-    <h3> Tags </h3>
-      <% @tags.each do |tag| %>
+    <li> Tags </li>
+      <% @post.tags.each do |tag| %>
         <br>
-        <li><%= link_to tag.name,  tag_posts_path(tag) %> </li>
+        <li><%= link_to tag.name,  tag_path(tag) %> </li>
       <% end %>
  </div>

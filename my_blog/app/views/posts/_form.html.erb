@@ -4,22 +4,21 @@
 <%= form_for @post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :body %>
     <br>
-    <%= f.text_area :body, cols: "80", rows: "10"%>
-  </div>
-  <% @tags.each do |tag| %>
-    <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
-    <%= label_tag :tags, tag.name %>
-  <% end %>
+    <%= f.text_area :body, rows: "10", class: "form-control"%>
   </div>
   <div class="form-group">
     <%= f.label :image%>
-    <%= f.text_field :image%>
+    <%= f.text_field :image, class: "form-control"%>
   </div>
+   <% @tags.each do |tag| %>
+    <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
+    <%= label_tag :tags, tag.name %>
+  <% end %>
     <%= f.submit "Submit", class: "btn btn-default center-block" %>
   <% end %>
 </center>
