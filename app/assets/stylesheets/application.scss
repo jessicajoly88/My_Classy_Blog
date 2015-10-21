@@ -3,30 +3,40 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  color: black !important;
 }
+
+.jumbotron h1 {
+  font-size: 750%;
+  font-weight: 300;
+   color: black !important;
+}
+
 
 .main-jumbotron {
   text-align: center;
   background-size: cover;
+  background-color:white;
   background-position: center center;
   margin:-20px;
   padding: 0px;
-  height: 300px;
+  height: 400px;
 }
 
-.navbar {
-   border: none;
-}
+
 
 .navbar-link {
   color: black !important;
-  font-size: 1.0em;
+  font-weight: 200;
+  font-size: 1.3em;
+
 }
+
+
 
 .post-header {
   margin-top:4rem;
   font-size: 3em;
-  color:black;
   font-weight: 400;
   text-align:center;
 }
