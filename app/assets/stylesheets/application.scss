@@ -9,8 +9,9 @@ body {
 .jumbotron h1 {
   font-size: 750%;
   font-weight: 300;
-   color: black !important;
+  color: black !important;
 }
+
 
 
 .main-jumbotron {
@@ -32,10 +33,16 @@ body {
 
 }
 
+.navbar-header {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
 .post-header {
-  margin-top:4rem;
+  margin-top:2rem;
   font-size: 3em;
-  font-weight: 400;
+  font-weight: 300;
   text-align:center;
 }
 

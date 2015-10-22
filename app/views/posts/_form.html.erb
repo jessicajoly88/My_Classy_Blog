@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @post %>
 
-<center>
+
 <%= form_for @post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
@@ -23,4 +23,4 @@
    <% end %>
     <%= f.submit "Submit", class: "btn btn-default center-block" %>
   <% end %>
-</center>
+  
