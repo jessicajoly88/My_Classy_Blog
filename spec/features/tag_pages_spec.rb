@@ -14,5 +14,16 @@ describe 'the add a tag process' do
     click_on 'Create Tag'
     expect(page).to have_content 'errors'
   end
+end
+
+describe "the edit a tag process" do
+  it "edits a tag" do
+    tag = Tag.create(:name=>"Ruby")
+    visit root_path
+    click_on 'Edit'
+    fill_in 'Name', :with => "Java"
+    click_on 'Update Tag'
+    expect(page).to_not have_content 'Ruby'
+  end
 
 end
