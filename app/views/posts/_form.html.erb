@@ -15,10 +15,12 @@
     <%= f.label :image%>
     <%= f.text_field :image, class: "form-control"%>
   </div>
-   <% @tags.each do |tag| %>
-    <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
-    <%= label_tag :tags, tag.name %>
-  <% end %>
+   <% if @tags %>
+     <% @tags.each do |tag| %>
+      <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
+      <%= label_tag :tags, tag.name %>
+    <% end %>
+   <% end %>
     <%= f.submit "Submit", class: "btn btn-default center-block" %>
   <% end %>
 </center>
