@@ -25,5 +25,13 @@ describe "the edit a tag process" do
     click_on 'Update Tag'
     expect(page).to_not have_content 'Ruby'
   end
+end
 
+describe "the delete a tag process" do
+  it "deletes a tag" do
+    tag = Tag.create(:name=>"Ruby")
+    visit root_path
+    click_on 'Delete'
+    expect(page).to_not have_content 'Ruby'
+  end
 end
