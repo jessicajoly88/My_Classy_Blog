@@ -8,6 +8,17 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 
+ <% if notice || alert %>
+  <div id="alert-row" class="row">
+    <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+    <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+  </div>
+  <% end %>
+
 <body>
   <div class = "container">
   <div class = "jumbotron main-jumbotron">
@@ -31,22 +42,21 @@
   </div>
 </div>
 
- <% if notice || alert %>
-  <div id="alert-row" class="row">
-    <% if notice %>
-    <div class="alert alert-success"><%= notice %></div>
-    <% end %>
-    <% if alert %>
-    <div class="alert alert-danger"><%= alert %></div>
-    <% end %>
-  </div>
-  <% end %>
 
 
 <div class="container-fluid">
   <%= yield %>
 </div>
  
-  
 </body>
+
+<% if current_admin %>
+  <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete %></li>
+<% elsif %>
+  <li><%= link_to 'Login', new_admin_session_path%><li>
+<% end %>
+  <% if admin_signed_in? %>
+     <%= link_to 'Register New Admin', new_admin_registration_path%></li>
+  <% end %>
+
 </html>

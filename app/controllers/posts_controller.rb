@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :current_admin, only: [ :edit, :update, :destroy, :create ]
+
+
   def index
   	@posts = Post.all
   	@tags = Tag.all
