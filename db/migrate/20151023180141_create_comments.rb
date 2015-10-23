@@ -5,7 +5,6 @@ class CreateComments < ActiveRecord::Migration
       t.column :user_id, :integer
       t.column :content, :text
       t.timestamps
-
     end
   end
 end
