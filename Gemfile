@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-
-
 gem 'rails'
 gem 'pg'
 gem 'uglifier'
@@ -9,6 +7,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem "font-awesome-rails"
+gem 'mini_magick'
+gem 'devise'
 
 group :development do
   gem 'byebug'
@@ -26,4 +29,5 @@ end
 group :test do
   gem 'shoulda-matchers', '3.0.0'
   gem 'capybara'
+  gem 'simplecov', require: false
 end
