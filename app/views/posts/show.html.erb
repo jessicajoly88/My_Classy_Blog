@@ -17,7 +17,7 @@
   </center>
   <br>
 
-<%= link_to "Leave a Comment",  new_post_comment_path(@post) %>
+<%= link_to "Leave a Comment",  new_post_comment_path(@post), class:"btn btn-default"  %>
 
 <% if @post.comments.any? %>
   <h4>Comments:</h4>
