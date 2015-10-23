@@ -511,17 +511,26 @@
       "/Users/jessicajoly/Desktop/My_Classy_Blog/config/routes.rb": [
         1,
         1,
-        null,
         1,
         null,
-        1,
-        1,
         1,
         null,
         null,
         1,
         1,
+        1,
         null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jessicajoly/Desktop/My_Classy_Blog/app/models/admin.rb": [
+        1,
+        1,
+        null,
+        1,
         null
       ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/app/controllers/application_controller.rb": [
@@ -718,6 +727,10 @@
         1,
         null,
         1,
+        null,
+        null,
+        null,
+        1,
         1,
         null
       ],
@@ -816,6 +829,13 @@
         null,
         null
       ],
+      "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/models/admin_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null
+      ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/models/comment_spec.rb": [
         1,
         null,
@@ -831,6 +851,7 @@
         2,
         2,
         2,
+        2,
         null
       ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/models/tag_spec.rb": [
@@ -843,6 +864,6 @@
         null
       ]
     },
-    "timestamp": 1445631963
+    "timestamp": 1445636274
   }
 }
