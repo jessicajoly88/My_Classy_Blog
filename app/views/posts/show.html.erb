@@ -6,7 +6,6 @@
   <div class="post-body">
   	<%= @post.body %>
   </div>
-
   <br>
   <hr>
   <br>
@@ -17,10 +16,23 @@
   </p></li>
   </center>
   <br>
-    <h3> Tags </h3>
-    <ul>
-      <% @post.tags.each do |tag| %>
-        <br>
-        <li><%= link_to tag.name,  tag_path(tag) %> </li>
-      <% end %>
-    </ul>
+
+<%= link_to "Leave a Comment",  new_post_comment_path(@post) %>
+
+<% if @post.comments.any? %>
+  <h4>Comments:</h4>
+  <% @post.comments.each do |comment| %>
+    <li><%=comment.created_at %></li>
+    <%= comment.content %>
+  <% end %>
+<% end %>
+
+<h3> Tags </h3>
+  <ul>
+  <% @post.tags.each do |tag| %>
+  <br>
+  <li><%= link_to tag.name,  tag_path(tag) %> </li>
+  <% end %>
+  </ul>
+
+</div>
