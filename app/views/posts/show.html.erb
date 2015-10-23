@@ -24,14 +24,18 @@
   <% @post.comments.each do |comment| %>
     <li><%=comment.created_at %></li>
     <%= comment.content %>
+    <%= link_to "Edit", edit_post_comment_path(@post, comment), class: "btn btn=default" %>
+    <%= link_to "Delete", post_comment_path(@post, comment),
+                              :data => {:confirm =>"You sure?",
+                              :method => "delete"}, class:"btn btn-default" %>
   <% end %>
 <% end %>
 
 <h3> Tags </h3>
   <ul>
   <% @post.tags.each do |tag| %>
-  <br>
-  <li><%= link_to tag.name,  tag_path(tag) %> </li>
+    <br>
+    <li><%= link_to tag.name,  tag_path(tag) %> </li>
   <% end %>
   </ul>
 
