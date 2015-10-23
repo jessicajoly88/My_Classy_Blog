@@ -29,7 +29,7 @@
 <br>
 <br>
 <% if @post.comments.any? %>
-<h4> Comments: </h4>
+  <h4> Comments: </h4>
   <% @post.comments.each do |comment| %>
     <%= comment.content %>
     <%= link_to "Edit Comment", edit_post_comment_path(@post, comment), class:"btn btn-default" %>

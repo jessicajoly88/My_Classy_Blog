@@ -43,7 +43,6 @@
 </div>
 
 
-
 <div class="container-fluid">
   <%= yield %>
 </div>
@@ -52,11 +51,11 @@
 
 <% if current_admin %>
   <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete %></li>
+  <li><%= link_to 'Register New Admin', new_admin_registration_path%></li>
+
 <% elsif %>
   <li><%= link_to 'Login', new_admin_session_path%><li>
+
 <% end %>
-  <% if admin_signed_in? %>
-     <%= link_to 'Register New Admin', new_admin_registration_path%></li>
-  <% end %>
 
 </html>

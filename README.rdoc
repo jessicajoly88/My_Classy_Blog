@@ -12,8 +12,10 @@ _Version 1.0 has the basic blog functionalities that include adding, editing and
 
 _Future Updates:._
 
-* Authentication for admin access
-* Mass deployment
+* Authentication for front-end user so they can add own comments
+* Integrate Paperclip gem to upload photos to posts 
+* Refactor rating attribute of posts so it is actually functional
+* Mass deployment to Heroku
 
 
 ## Setup
