@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @novel.rating = 0 
     tag_ids = params[:post][:tag]
   	if @post.save
       if tag_ids != nil
@@ -36,8 +37,12 @@ class PostsController < ApplicationController
 
   def edit
   	@post = Post.find(params[:id])
-    @tags = Tag. all 
-
+    @tags = Tag.all 
+      if params[:upvote]
+        new_rating = @post.rating + 1
+        @post.update(rating: new_rating)
+        redirect_to posts_path
+      end
   end
 
   def update

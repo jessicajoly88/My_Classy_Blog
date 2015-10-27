@@ -1,14 +1,22 @@
-<div class = "container">
+<div class="container">
 <ul>
- <% @posts.each do |post| %>
-   <li>
-   <br>
-    <%= link_to post.title, post_path(post) %>
-    <small> <%=post.rating %> Likes </small>
-    <small>Posted: <%= ((Time.now - post.created_at)/60).round(0)%> minutes ago</small>
+  <% @posts.each do |post| %>
+    <li>
     <br>
-   </li>
- <% end %> 
+      <div class="post-display">
+        <%= link_to post.title, post_path(post) %> 
+        <%= link_to content_tag(:span, "", class:"glyphicon glyphicon-heart-empty"), 
+        edit_post_path(post.id, upvote: true) %>
+      </div>
+      <small> <%= post.rating %> Likes </small>
+      <small>Posted: <%= post.created_at %></small>
+    <br>
+    </li>
+  <% end %> 
+</ul>  
+
+<span class="glyphicon"></span>
+
 <br>
   <% if admin_signed_in? %>
     <%=link_to "New Post", new_post_path, class:"btn btn-default" %>

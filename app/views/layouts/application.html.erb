@@ -45,17 +45,18 @@
 
 <div class="container-fluid">
   <%= yield %>
-</div>
- 
+
 </body>
 
 <% if current_admin %>
-  <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete %></li>
-  <li><%= link_to 'Register New Admin', new_admin_registration_path%></li>
-
+  <ul>
+    <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete, class:"btn btn-success" %> 
+        <%= link_to 'Sign-Up', new_admin_registration_path, class:"btn btn-warning"%></li>
+  </ul>
 <% elsif %>
   <li><%= link_to 'Login', new_admin_session_path%><li>
-
 <% end %>
+
+</div>
 
 </html>
