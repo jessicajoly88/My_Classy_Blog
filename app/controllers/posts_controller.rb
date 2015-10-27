@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   	@tags = Tag.all
   end
 
-  def show 
+  def show
   	@post = Post.find(params[:id])
   end
 
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @novel.rating = 0 
+    @post.rating = 0
     tag_ids = params[:post][:tag]
   	if @post.save
       if tag_ids != nil
@@ -26,19 +26,20 @@ class PostsController < ApplicationController
           tag_ids.each do |tag_id|
             tag = Tag.find(tag_id)
             @post.tags.push(tag)
-          end 
+          end
         end
       end
       redirect_to posts_path
     else
-      render :new  
+      render :new
     end
-  end 
+  end
 
   def edit
   	@post = Post.find(params[:id])
-    @tags = Tag.all 
+    @tags = Tag.all
       if params[:upvote]
+
         new_rating = @post.rating + 1
         @post.update(rating: new_rating)
         redirect_to posts_path
@@ -49,7 +50,7 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
     tag_ids = params[:post][:tag]
   	if @post.update(post_params)
-      if tag_ids == nil 
+      if tag_ids == nil
         @post.tags.destroy_all()
       elsif tag_ids.length > 0
          tag_ids.each do |tag_id|
@@ -62,7 +63,7 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
   	@post = Post.find(params[:id])
     @post.destroy
