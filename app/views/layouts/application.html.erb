@@ -49,10 +49,10 @@
 </body>
 
 <% if current_admin %>
-  <ul>
-    <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete, class:"btn btn-success" %></li>
-
-  </ul>
+  <div class="admin-display">
+    Welcome back, <%= current_admin.email %>!
+    <%= link_to 'Logout', destroy_admin_session_path, method: :delete, class:"btn btn-success" %>
+  </div>
 <% else %>
   <div class ="buttons-display">
     <%= link_to 'Login', new_admin_session_path, class:"btn btn-default"%>

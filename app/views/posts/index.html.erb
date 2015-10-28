@@ -6,10 +6,9 @@
       <div class="post-display">
         <%= link_to post.title, post_path(post) %>
         <%= link_to content_tag(:span, "", class:"glyphicon glyphicon-heart-empty"),
-        edit_post_path(post.id, upvote: true) %>
+        edit_post_path(post.id, upvote: true) %> <small> <%= post.rating %> Likes </small>
       </div>
-      <small> <%= post.rating %> Likes </small>
-      <small>Posted: <%= post.created_at %></small>
+      <small>Posted: <%= post.created_at.time.to_formatted_s(:long) %></small>
     <br>
     </li>
   <% end %>
