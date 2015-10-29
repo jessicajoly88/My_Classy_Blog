@@ -25,15 +25,10 @@
   
   <hr>
 
-
-  
-<%=link_to content_tag(:span, "", class:"glyphicon glyphicon-comment"), new_post_comment_path(@post) %> <span class="glyphicon"></span>
-
-
+<%=link_to "Leave a Comment", new_post_comment_path(@post), class:"btn btn-default", id:"new_post_comment_link", remote:true %>
 <br>
 <br>
 <% if @post.comments.any? %>
-
   <% @post.comments.each do |comment| %>
     <%= comment.content %>
     <%= link_to "Edit Comment", edit_post_comment_path(@post, comment), class:"btn btn-default" %>

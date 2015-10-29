@@ -26,8 +26,11 @@ class TagsController < ApplicationController
 
   def update
   	@tag = Tag.find(params[:id])
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
   	if @tag.update(tag_params)
-  	  redirect_to posts_path
   	else
   	  render :edit
   	end

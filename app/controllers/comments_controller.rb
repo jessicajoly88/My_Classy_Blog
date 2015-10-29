@@ -8,7 +8,10 @@ class CommentsController < ApplicationController
   	@post = Post.find(params[:post_id])
   	@comment = @post.comments.new(comment_params)
   	  if @comment.save
-  	  	redirect_to post_path(@post)
+        respond_to do |format|
+          format.html {redirect_to post_path(@post)}
+          format.js
+  	    end
   	  else
   	  	render :new
   	  end

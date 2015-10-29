@@ -12,6 +12,7 @@ gem 'will_paginate-bootstrap'
 gem "font-awesome-rails"
 gem 'mini_magick'
 gem 'devise'
+gem 'selenium-webdriver'
 
 group :development do
   gem 'byebug'

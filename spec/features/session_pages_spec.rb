@@ -8,7 +8,7 @@ describe "Session creation/Admin login path" do
     fill_in 'Email', :with => admin.email 
     fill_in 'Password', :with => admin.password
     click_on 'Log in'
-    expect(page). to have_content "Welcome back"
+    expect(page). to have_content "Welcome"
   end
 
   it "display an error if not logged in " do
