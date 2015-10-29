@@ -11,7 +11,10 @@ class TagsController < ApplicationController
   def create
   	@tag = Tag.new(tag_params)
   	if @tag.save
-  	  redirect_to posts_path
+  	  respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
   	else
   	  render :new
   	 end

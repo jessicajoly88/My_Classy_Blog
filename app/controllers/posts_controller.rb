@@ -23,15 +23,19 @@ class PostsController < ApplicationController
     @post.rating = 0
     tag_ids = params[:post][:tag]
   	if @post.save
-      if tag_ids != nil
-        if tag_ids.length > 0
-          tag_ids.each do |tag_id|
-            tag = Tag.find(tag_id)
-            @post.tags.push(tag)
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
+        if tag_ids != nil
+          if tag_ids.length > 0
+            tag_ids.each do |tag_id|
+              tag = Tag.find(tag_id)
+              @post.tags.push(tag)
           end
         end
       end
-      redirect_to posts_path
+      
     else
       render :new
     end
