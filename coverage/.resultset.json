@@ -512,12 +512,22 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
         null,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jessicajoly/Desktop/My_Classy_Blog/app/models/user.rb": [
         1,
         null,
         null,
@@ -555,6 +565,9 @@
         4,
         4,
         3,
+        6,
+        3,
+        null,
         null,
         1,
         null,
@@ -713,6 +726,9 @@
         1,
         1,
         1,
+        2,
+        1,
+        null,
         1,
         null,
         0,
@@ -733,6 +749,7 @@
         null
       ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/app/models/comment.rb": [
+        1,
         1,
         1,
         1,
@@ -757,7 +774,10 @@
         null
       ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/factories.rb": [
-        1,
+        2,
+        null,
+        null,
+        null,
         1,
         1,
         1,
@@ -946,6 +966,7 @@
         1,
         2,
         2,
+        2,
         null
       ],
       "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/models/post_spec.rb": [
@@ -966,8 +987,15 @@
         2,
         null,
         null
+      ],
+      "/Users/jessicajoly/Desktop/My_Classy_Blog/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null
       ]
     },
-    "timestamp": 1446092275
+    "timestamp": 1446094140
   }
 }
