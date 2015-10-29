@@ -18,7 +18,7 @@
 
 <br>
   <% if admin_signed_in? %>
-    <%=link_to "New Post", new_post_path, class:"btn btn-default" %>
+    <%=link_to "New Post", new_post_path, id: "new_post_link", class: "btn btn-info", remote: true %>
   <% end %>
 <br>
 <hr>
