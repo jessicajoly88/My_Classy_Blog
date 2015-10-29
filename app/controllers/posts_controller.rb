@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :current_admin, only: [ :edit, :update, :destroy, :create ]
-
-
+  
   def index
   	@posts = Post.all.sort_by{|post|
-      (post.rating + (1/(Time.new - post.created_at) * 1000))}
+      (post.rating + ((1/(Time.new - post.created_at) * 1000)))
+    }
     @posts.reverse!
   	@tags = Tag.all
   end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
           end
         end
       end
-      
+
     else
       render :new
     end

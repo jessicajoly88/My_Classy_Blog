@@ -15,14 +15,14 @@
                               :method => "delete"}, class:"btn btn-default" %>
     </p></li>
   <% end %>
- 
+
   <ul>
   <% @post.tags.each do |tag| %>
     <br>
     <li>Tags: <%= link_to tag.name,  tag_path(tag) %> </li>
   <% end %>
   </ul>
-  
+
   <hr>
 
 <%=link_to "Leave a Comment", new_post_comment_path(@post), class:"btn btn-default", id:"new_post_comment_link", remote:true %>

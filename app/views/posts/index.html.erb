@@ -18,7 +18,9 @@
 
 <div class="container">
   <% if admin_signed_in? %>
+  <% if !current_admin.user %>
     <%=link_to "New Post", new_post_path, id: "new_post_link", class: "btn btn-success",remote: true %>
+  <% end %>
   <% end %>
 </div>
 <hr>
