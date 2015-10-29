@@ -22,6 +22,7 @@
   <% end %>
 <br>
 <hr>
+
 <h3> Tags </h3>
 <ul>
   <% @tags.each do |tag| %>
@@ -40,6 +41,6 @@
   <% if admin_signed_in? %>
     <%=link_to "Add Tag", new_tag_path, class:"btn btn-default" %>
   <% end %>
-
 </ul>
+
 </div>

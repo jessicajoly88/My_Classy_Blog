@@ -41,7 +41,6 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
     @tags = Tag.all
       if params[:upvote]
-
         new_rating = @post.rating + 1
         @post.update(rating: new_rating)
         redirect_to posts_path
