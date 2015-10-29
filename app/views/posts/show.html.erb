@@ -25,7 +25,11 @@
   
   <hr>
 
-<%= link_to "Leave a Comment",  new_post_comment_path(@post), class:"btn btn-default"  %>
+
+  
+<%=link_to content_tag(:span, "", class:"glyphicon glyphicon-comment"), new_post_comment_path(@post) %> <span class="glyphicon"></span>
+
+
 <br>
 <br>
 <% if @post.comments.any? %>
