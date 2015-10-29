@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 describe 'the add a comment process' do
+  before(:each) do
+    admin = FactoryGirl.create(:user)
+    visit '/'
+    click_on 'Login'
+    fill_in 'Email', :with => admin.email
+    fill_in 'Password', :with => admin.password
+    click_on 'Log in'
+  end
+
   it 'adds a comment to a post' do
   	post = Post.create(:title => "The new beginning", :body => "Blablabalaba")
   	visit post_path(post)
@@ -21,8 +30,17 @@ describe 'the add a comment process' do
 end
 
 describe  "the edit a comment process" do
+  before(:each) do
+    admin = FactoryGirl.create(:user)
+    visit '/'
+    click_on 'Login'
+    fill_in 'Email', :with => admin.email
+    fill_in 'Password', :with => admin.password
+    click_on 'Log in'
+  end
+
 	it "edits a comment" do
-	  post = Post.create(:title=> "This Sucks", :body=> "Hot and Steamy")
+	    post = Post.create(:title=> "This Sucks", :body=> "Hot and Steamy")
       visit post_path(post)
       click_on 'Leave a Comment'
       fill_in 'Content', :with => "this is the bes thing ever ver ever"
@@ -35,6 +53,15 @@ describe  "the edit a comment process" do
 end
 
 describe "the delete a comment process" do
+  before(:each) do
+    admin = FactoryGirl.create(:user)
+    visit '/'
+    click_on 'Login'
+    fill_in 'Email', :with => admin.email
+    fill_in 'Password', :with => admin.password
+    click_on 'Log in'
+  end
+  
 	it "deletes a comment" do
 	  post = Post.create(:title=> "This Sucks", :body=> "Hot and Steamy")
       visit post_path(post)

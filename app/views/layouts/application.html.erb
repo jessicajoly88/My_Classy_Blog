@@ -36,11 +36,10 @@
           <li><a class="navbar-link" href="/">Home</a></li>
         </ul>
       </div>
-      <br>
-      <hr>
     </div>
   </div>
 </div>
+<hr>
 
 
 <div class="container-fluid">
@@ -49,7 +48,7 @@
 </div>
 <br>
 <br>
-<div class = "container">
+<div class="container">
   <% if current_admin %>
     <div class="admin-display">
       Welcome, <%= current_admin.email %>!
@@ -58,7 +57,6 @@
   <% else %>
     <div class ="buttons-display">
       <%= link_to 'Login', new_admin_session_path, class:"btn btn-default"%>
-      <%= link_to 'Sign-Up', new_admin_registration_path, class:"btn btn-default" %>
     </div>
   <% end %>
 </div>
