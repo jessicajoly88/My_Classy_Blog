@@ -42,24 +42,12 @@
 <hr>
 
 
+
 <div class="container-fluid">
   <%= yield %>
    </body>
 </div>
 <br>
 <br>
-<div class="container">
-  <% if current_admin %>
-    <div class="admin-display">
-      Welcome, <%= current_admin.email %>!
-      <%= link_to 'Logout', destroy_admin_session_path, method: :delete, class:"btn btn-default" %>
-    </div>
-  <% else %>
-    <div class ="buttons-display">
-      <%= link_to 'Login', new_admin_session_path, class:"btn btn-default"%>
-    </div>
-  <% end %>
-</div>
-
 </div>
 </html>

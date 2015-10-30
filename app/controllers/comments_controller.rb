@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  def new 
+  def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new
   end
@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   def create
   	@post = Post.find(params[:post_id])
   	@comment = @post.comments.new(comment_params)
+    @comment.admin = current_admin
   	  if @comment.save
         respond_to do |format|
           format.html {redirect_to post_path(@post)}
@@ -15,9 +16,9 @@ class CommentsController < ApplicationController
   	  else
   	  	render :new
   	  end
-  end 
+  end
 
-  def edit 
+  def edit
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
@@ -30,7 +31,7 @@ class CommentsController < ApplicationController
   	  else
   	  	render :edit
   	  end
-  end 
+  end
 
   def destroy
   	@post = Post.find(params[:post_id])
